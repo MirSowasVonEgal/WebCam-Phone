@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebCam</title>
+  </head>
+  <body>
+    <!-- Sichtbarer Dokumentinhalt im body -->
+    <p>ABCD</p>
+    <script>
+      const socket = new WebSocket("ws://172.20.10.2:8081");
+
+      socket.addEventListener("open", (event) => {
+        console.log("WebSocket-Verbindung geöffnet");
+
+        const message = "Hello, server!";
+        socket.send(message);
+      });
+    </script>
+  </body>
+</html>
